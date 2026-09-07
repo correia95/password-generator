@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#4f46e5" />
+
+    <title>Password Generator — strong random passwords, in your browser</title>
+    <meta
+      name="description"
+      content="Generate strong random passwords in your browser using the secure random generator. Choose length and character types, avoid look-alike characters, see the entropy and crack time, and make a batch. Nothing is sent anywhere or stored."
+    />
+    <link rel="canonical" href="https://password-generator.correia95.workers.dev/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Password Generator" />
+    <meta property="og:description" content="Strong random passwords made locally with crypto.getRandomValues. Length, character types, look-alike avoidance, entropy + crack time, batch mode. Nothing stored." />
+    <meta property="og:url" content="https://password-generator.correia95.workers.dev/" />
+    <meta property="og:image" content="https://password-generator.correia95.workers.dev/og.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Password Generator" />
+    <meta name="twitter:description" content="Strong random passwords made locally. Length, character types, look-alike avoidance, entropy + crack time, batch mode." />
+    <meta name="twitter:image" content="https://password-generator.correia95.workers.dev/og.svg" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Password Generator",
+        "url": "https://password-generator.correia95.workers.dev/",
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Generate strong random passwords with configurable length and character sets, look-alike avoidance and an entropy estimate, entirely in the browser using crypto.getRandomValues."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Are these passwords generated securely?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Every random choice comes from the browser's crypto.getRandomValues with rejection sampling, so there is no modulo bias. Generation happens entirely on your device with no network request."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long should a password be?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For a random password, aim for at least 16 characters, or 20 if you can. That puts the entropy above what an attacker with fast offline hardware can brute-force. Length matters far more than adding exotic symbols."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does 'avoid look-alikes' do?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It removes characters that are easy to confuse when typing: zero and capital O, and the number one, lowercase L and capital I. It costs a small amount of entropy, which you can recover by adding a character or two of length."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I remember the generated password?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Put it in a password manager. The recommended approach is a unique random password for every site, stored in a manager that you unlock with one strong passphrase you actually memorise."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <noscript>
+      <p style="text-align: center; padding: 20px">
+        This password generator needs JavaScript. It creates strong random passwords in your browser
+        with the secure random generator; nothing is sent anywhere.
+      </p>
+    </noscript>
+  </body>
+</html>

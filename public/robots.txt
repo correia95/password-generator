@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://password-generator.correia95.workers.dev/sitemap.xml
