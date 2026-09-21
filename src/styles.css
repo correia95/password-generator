@@ -89,3 +89,8 @@ header h1 { font-size: clamp(1.5rem, 4.5vw, 2rem); margin: 0 0 6px; letter-spaci
 .explainer footer { margin-top: 24px; text-align: center; font-size: 0.8rem; color: var(--ink-soft); }
 
 @media (max-width: 420px) { .toggles { grid-template-columns: 1fr; } }
+
+/* a11y-contrast-fixes (auto, WCAG AA 4.5:1) */
+@media (prefers-color-scheme: dark) {
+  .pwacts .primary { color: #0b0b0f; }
+}
